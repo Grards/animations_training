@@ -1,0 +1,13 @@
+// VARIABLES
+@use '../abstracts/colors';
+
+
+.body--index{
+    background-color: colors.$black;
+    color : colors.$white;
+    h1{
+        text-align: center;
+        font-size: 36px;
+        text-transform: uppercase;
+    }
+}

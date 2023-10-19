@@ -1,0 +1,70 @@
+@use '../abstracts/colors';
+
+.cat{
+    width: 250px;
+    height: 250px;
+    position: relative;
+    margin: 100px auto 20px auto;
+    .ear, .eye, .muzzle{
+        background-color: colors.$white;
+    }
+    .ear{
+        position: absolute;
+        top: -30%;
+        height: 60%;
+        width: 25%;
+        background: colors.$white;
+        
+        // Ear hair
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 24%;
+            height: 10%;
+            width: 5%;
+            border-radius: 50%;
+            background: colors.$black;
+        }
+        &::after {
+            transform-origin: 50% 100%;
+        }
+    }
+    .ear--left {
+        left: -7%;
+        border-radius: 70% 30% 0% 0% / 100% 100% 0% 0%;
+        transform: rotate(-15deg);
+        
+        &::before,
+        &::after {
+          right: 10%;
+        }
+        
+        &::after {
+          transform: rotate(-45deg);
+        }
+    }
+      
+    .ear--right {
+        right: -7%;
+        border-radius: 30% 70% 0% 0% / 100% 100% 0% 0%;
+        transform: rotate(15deg);
+        
+        &::before,
+        &::after {
+          left: 10%;
+        }
+        
+        &::after {
+          transform: rotate(45deg);
+        }
+    }
+
+    .face{
+        position: absolute;
+        background-color: colors.$black;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+    }
+}
